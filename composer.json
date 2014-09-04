@@ -1,0 +1,19 @@
+{
+    "name": "snoobi/snoobi-sdk-php",
+    "type": "library",
+    "description": "Snoobi API PHP SDK",
+    "keywords": ["snoobi", "api", "sdk", "oauth"],
+    "homepage": "https://api.snoobi.com/",
+    "require": {
+        "guzzlehttp/guzzle": "~4.0",
+        "guzzlehttp/oauth-subscriber": "0.1.x"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Snoobi": "src"
+        }
+    }
+}

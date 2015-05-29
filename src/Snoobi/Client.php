@@ -13,7 +13,7 @@ class Client
     /**
      * Snoobi api url
      */
-    const API_URL = 'https://api.snoobi.com/';
+    private $apiUrl;
 
     /**
      * The GuzzleHttp\Client
@@ -49,6 +49,7 @@ class Client
         $this->consumerSecret = isset($params['consumer_secret']) ? $params['consumer_secret'] : null;
         $this->token = isset($params['token']) ? $params['token'] : null;
         $this->tokenSecret = isset($params['token_secret']) ? $params['token_secret'] : null;
+        $this->apiUrl = isset($params['api_url']) ? $params['api_url'] : 'https://api.snoobi.com/';
     }
 
     /**
@@ -173,7 +174,7 @@ class Client
         if (!is_null($this->client))
             return $this->client;
 
-        $client = new GuzzleClient(['base_url' => self::API_URL]);
+        $client = new GuzzleClient(['base_url' => $this->apiUrl]);
         $oauth = new Oauth1(array(
             'consumer_key'    => $this->consumerKey,
             'consumer_secret' => $this->consumerSecret,
